@@ -8,11 +8,13 @@ const categoryApi = () => {
 
   const  myfunction = (categories) =>{
     const CatagoryContainer = document.getElementById('category-container');
+ 
    
           categories.forEach(cat => {
+            // console.log(cat.category_id); // return Category ID
             const button = document.createElement('button');
                   button.innerHTML = `
-                  <button class="btn btn-sm  hover:bg-[#FF1F3D] hover:text-white">${cat.category}</button>
+                  <button onclick="CatagoryFilter(${cat.category_id})" class="btn btn-sm  hover:bg-[#FF1F3D] hover:text-white">${cat.category}</button>
                   `
             CatagoryContainer.appendChild(button);
   

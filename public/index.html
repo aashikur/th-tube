@@ -19,16 +19,21 @@
      </header>
 
      <!-- nav bar  -->
-      <nav id="category-container" class="py-4  flex gap-4 justify-center">
-        <button class="btn btn-sm  bg-[#FF1F3D] text-white">All</button>
-    <!-- <button class="btn btn-sm">Music</button>
-        <button class="btn btn-sm">Movies</button>
-        <button class="btn btn-sm">TV</button> -->
-
+      <nav id="category-container" class="py-6 md:py-8  flex gap-4 justify-center">
+        <button onclick="videoApi()" class="btn btn-sm  bg-[#FF1F3D] text-white">All</button>
+    <!-- <button class="btn btn-sm">Music</button> -->
       </nav>
+
+
+      <!-- Videos  -->
+       <div class="w-11/12 mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 " id="video-container">
+
+       </div> 
+
 
 
       <!-- main index.js  -->
        <script src="scripts/category.js"></script>
+       <script src="scripts/videos.js"></script>
 </body>
 </html>
