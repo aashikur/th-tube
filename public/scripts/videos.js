@@ -10,7 +10,7 @@ const videoApi = () => {
 function CatagoryFilter(id){ // Getting ID from Category.js file
   const urls = `https://openapi.programming-hero.com/api/phero-tube/category/${id}`
    
-  console.log(urls);
+  // console.log(urls);
   fetch(urls)
   .then(res=> res.json())
   .then(data => dynamicVideo(data.category))
@@ -23,6 +23,18 @@ function CatagoryFilter(id){ // Getting ID from Category.js file
 function dynamicVideo(data){
   const videoContainer = document.getElementById('video-container');
         videoContainer.innerHTML = '';
+
+        console.log(data.length)
+        if(data.length == 0) {
+          videoContainer.innerHTML = `
+        <div class="col-span-full flex flex-col items-center text-center gap-y-6 py-40">
+            <div><img src="assets/img/Icon.png" alt=""></div>
+            <div><h1 class="text-xl font-bold">Oops!! Sorry, there is no<br>Content here</h1></div>
+        </div>
+        `
+        return;
+
+        }
   
   data.forEach(video => {
 
@@ -49,6 +61,6 @@ function dynamicVideo(data){
   });
 }
 
-videoApi();
+// videoApi();
 
 
