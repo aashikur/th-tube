@@ -34,9 +34,26 @@
 
       <!-- Videos  -->
        <div class="relative w-11/12 mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 " id="video-container">
-
-
        </div> 
+
+    
+       <!-- Video Modal  -->
+<!-- You can open the modal using ID.showModal() method -->
+<!-- <button class="btn" onclick="my_modal_4.showModal()">open modal</button> -->
+<dialog id="videoDetails" class="modal">
+  <div class="modal-box">
+        <div id="details_container">
+            <!-- // Dynamic Details will be here -->
+        </div>
+
+      <form method="dialog" class="absolute top-5 right-10">
+        <!-- if there is a button, it will close the modal -->
+    <div class="">
+        <button class="cursor-pointer modal-action   text-white px-4 py-2 active  hover:opacity-100 opacity-80 rounded-sm">X</button>
+      </form>
+    </div>
+  </div>
+</dialog>
 
 
 

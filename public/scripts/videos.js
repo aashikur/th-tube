@@ -53,7 +53,7 @@ function dynamicVideo(data){
     const div = document.createElement('div');
     const bage = (video.authors[0].verified)? "https://img.icons8.com/?size=48&id=102561&format=png" : "";
     div.innerHTML = `
-              <div>
+            <div>
             <div class="relative">
                 <img class="rounded-md aspect-video w-full object-cover" src="${video.thumbnail}" alt="">
                 <span class="absolute bg-black text-white text-sm px-[6px] rounded-sm bottom-2 right-4">3hrs 56 min ago</span>
@@ -66,6 +66,9 @@ function dynamicVideo(data){
                     <p class="text-sm text-gray-600">${video.others.views} views</p>
                 </div>
             </div>
+            <button onclick=loadVideoDetails('${video.video_id}') class="btn btn-block mt-2 bg-white hover:bg-gray-50 text-[#222] border-[#e5e5e5] text-sm md:text-[1rem]">
+          Show Details
+          </button>
         </div>
     `
 
@@ -73,6 +76,6 @@ function dynamicVideo(data){
   });
 }
 
-// videoApi();
+videoApi();
 
 
