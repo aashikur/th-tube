@@ -23,10 +23,10 @@ function CatagoryFilter(id){ // Getting ID from Category.js file
   // console.log(urls);
   fetch(urls)
   .then(res=> res.json())
-  .then(data => {
+  .then(data => { 
     
     dynamicVideo(data.category)})
-  // here data.category is "Array of Content"
+  // here data.category is "Array of Content."
 }
 
 
