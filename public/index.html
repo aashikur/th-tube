@@ -19,7 +19,13 @@
     <!-- header  -->
      <header class="w-11/12 mx-auto flex justify-between  items-center py-4 md:py-5 border-b border-gray-200">
         <div><img class="w-[120px]" src="assets/img/logo.png" alt=""></div>
-        <div><button class="btn">Sort by view</button></div>
+        <div> <!-- Scarch bar-->
+            <label class="input">
+                <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></g></svg>
+                <input id="ScarchField" type="search" class="grow w-10 focus:w-28 md:focus:w-56 transition-all duration-300" placeholder="Search" />
+
+              </label>
+        </div>
         <div><button class="btn bg-[#FF1F3D] text-white">Blog</button></div>
      </header>
 
@@ -49,7 +55,7 @@
       <form method="dialog" class="absolute top-5 right-10">
         <!-- if there is a button, it will close the modal -->
     <div class="">
-        <button class="cursor-pointer modal-action   text-white px-4 py-2 active  hover:opacity-100 opacity-80 rounded-sm">X</button>
+        <button id="subscribe" class="cursor-pointer modal-action   text-white px-4 py-2 active  hover:opacity-100 opacity-80 rounded-sm">X</button>
       </form>
     </div>
   </div>
@@ -61,5 +67,6 @@
        <script src="scripts/category.js"></script>
        <script src="scripts/videos.js"></script>
        <script src="scripts/active.js"></script>
+       <script src="scripts/search.js"></script>
 </body>
 </html>
