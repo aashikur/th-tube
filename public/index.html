@@ -1,78 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Watch Online Free</title>
-    <link rel="shortcut icon" href="assets/img/Icon.png" type="image/x-icon">
-    <!-- desiy UI  -->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <style>
-        .active{
-            background-color: #FF1F3D ;
-            color:white;
-        }
-      </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Watch Online Free</title>
+  <link rel="shortcut icon" href="assets/img/Icon.png" type="image/x-icon">
+  <!-- DaisyUI CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>
+    .active {
+      background-color: #FF1F3D;
+      color: white;
+    }
+  </style>
 </head>
+
 <body>
-    <!-- header  -->
-     <header class="w-11/12 mx-auto flex justify-between  items-center py-4 md:py-5 border-b border-gray-200">
-        <div><img class="w-[120px]" src="assets/img/Logo.png" alt=""></div>
-        <div> <!-- Scarch bar-->
-            <label class="input">
-                <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></g></svg>
-                <input id="ScarchField" type="search" class="grow w-10 focus:w-28 md:focus:w-56 transition-all duration-300" placeholder="Search" />
+  <!-- Header -->
+  <header class="w-11/12 mx-auto flex justify-between items-center py-4 md:py-5 border-b border-gray-200">
+    <div>
+      <img class="w-[120px]" src="assets/img/Logo.png" alt="Logo">
+    </div>
+    <div>
+      <!-- Search bar -->
+      <label class="input">
+        <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none" stroke="currentColor">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.3-4.3"></path>
+          </g>
+        </svg>
+        <input id="ScarchField" type="search" class="grow w-10 focus:w-28 md:focus:w-56 transition-all duration-300" placeholder="Search" />
+      </label>
+    </div>
+    <div>
+      <button class="btn bg-[#FF1F3D] text-white">Blog</button>
+    </div>
+  </header>
 
-              </label>
-        </div>
-        <div><button class="btn bg-[#FF1F3D] text-white">Blog</button></div>
-     </header>
+  <!-- Navigation bar -->
+  <nav id="category-container" class="py-6 md:py-8 flex gap-4 justify-center">
+    <div>
+      <button id="btn-all" onclick="videoApi()" class="btn btn-sm active">All</button>
+    </div>
+    <!-- <button class="btn btn-sm">Music</button> -->
+  </nav>
 
-     <!-- nav bar  -->
-      <nav id="category-container" class="py-6 md:py-8  flex gap-4 justify-center">
-        <div>
-        <button id="btn-all" onclick="videoApi()" class="btn btn-sm active">All</button>
-        </div>
-        <!-- <button class="btn btn-sm">Music</button> -->
-      </nav>
+  <!-- Loader -->
+  <div class="text-center py-20 hidden" id="loader">
+    <span class="loading loading-dots loading-xl"></span>
+  </div>
 
-      <!-- loader   -->
-       <div class="text-center py-20 hidden" id="loader">
-        <span class="loading loading-dots loading-xl"></span>
+  <!-- Videos -->
+  <div class="relative w-11/12 mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6" id="video-container">
+  </div>
 
-       </div>
-
-
-      <!-- Videos  -->
-       <div class="relative w-11/12 mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 " id="video-container">
-       </div> 
-
-    
-       <!-- Video Modal  -->
-<!-- You can open the modal using ID.showModal() method -->
-<!-- <button class="btn" onclick="my_modal_4.showModal()">open modal</button> -->
-<dialog id="videoDetails" class="modal">
-  <div class="modal-box">
-        <div id="details_container">
-            <!-- // Dynamic Details will be here -->
-        </div>
-
+  <!-- Video Modal -->
+  <!-- You can open the modal using ID.showModal() method -->
+  <!-- <button class="btn" onclick="my_modal_4.showModal()">open modal</button> -->
+  <dialog id="videoDetails" class="modal">
+    <div class="modal-box">
+      <div id="details_container">
+        <!-- Dynamic Details will be here -->
+      </div>
       <form method="dialog" class="absolute top-5 right-10">
         <!-- if there is a button, it will close the modal -->
-    <div class="">
-        <button id="subscribe" class="cursor-pointer modal-action   text-white px-4 py-2 active  hover:opacity-100 opacity-80 rounded-sm">X</button>
+        <div>
+          <button id="subscribe" class="cursor-pointer modal-action text-white px-4 py-2 active hover:opacity-100 opacity-80 rounded-sm">X</button>
+        </div>
       </form>
     </div>
-  </div>
-</dialog>
+  </dialog>
 
+  <!-- Main JavaScript files -->
+  <!-- <script src="scripts/category.js"></script>
+  <script src="scripts/videos.js"></script>
+  <script src="scripts/active.js"></script>
+  <script src="scripts/search.js"></script> -->
 
-
-      <!-- main index.js  -->
-       <script src="scripts/category.js"></script>
-       <script src="scripts/videos.js"></script>
-       <script src="scripts/active.js"></script>
-       <script src="scripts/search.js"></script>
+  <script src="scripts/index.js"></script>
 </body>
+
 </html>
