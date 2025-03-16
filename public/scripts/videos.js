@@ -1,15 +1,21 @@
 // Load Videos Api
-const videoApi = () => {
-  fetch('https://openapi.programming-hero.com/api/phero-tube/videos')
+const videoApi = (input ='') => {
+  showLoader();
+
+  fetch(`https://openapi.programming-hero.com/api/phero-tube/videos?title=${input}`)
     .then(response => response.json())
     .then(data => {
       removeActive();
       document.getElementById('btn-all').classList.add('active');
       dynamicVideo(data.videos);
     });
+
+
+    // console.log(`https://openapi.programming-hero.com/api/phero-tube/videos?title=${input}`);
 };
 
 function CatagoryFilter(id) {
+  showLoader();
   // Getting ID from Category.js file
   const urls = `https://openapi.programming-hero.com/api/phero-tube/category/${id}`;
 
@@ -25,6 +31,7 @@ function CatagoryFilter(id) {
       dynamicVideo(data.category);
     });
   // here data.category is "Array of Content..."
+ 
 }
 
 // This Will Get the Result if u give "Array of Content"
@@ -40,6 +47,7 @@ function dynamicVideo(data) {
         <div><h1 class="text-xl font-bold">Oops!! Sorry, there is no<br>Content here</h1></div>
       </div>
     `;
+    hideLoader();
     return;
   }
 
@@ -70,6 +78,7 @@ function dynamicVideo(data) {
     `;
     videoContainer.appendChild(div);
   });
+  hideLoader();
 }
 
 videoApi();
