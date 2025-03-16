@@ -12,11 +12,11 @@ const categoryApi = () => {
    
           categories.forEach(cat => {
             // console.log(cat.category_id); // return Category ID
-            const button = document.createElement('button');
-                  button.innerHTML = `
-                  <button onclick="CatagoryFilter(${cat.category_id})" class="btn btn-sm  hover:bg-[#FF1F3D] hover:text-white">${cat.category}</button>
+            const div = document.createElement('div');
+                  div.innerHTML = `
+                  <button id='btn-${cat.category_id}' onclick="CatagoryFilter(${cat.category_id})" class="btn btn-sm  hover:bg-[#FF1F3D] hover:text-white">${cat.category}</button>
                   `
-            CatagoryContainer.appendChild(button);
+            CatagoryContainer.appendChild(div);
   
           });
 

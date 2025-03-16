@@ -3,17 +3,29 @@
 const videoApi = () => {
   fetch('https://openapi.programming-hero.com/api/phero-tube/videos')
   .then(response => response.json())
-  .then(data => dynamicVideo(data.videos))
+  .then(data => {
+    removeActive();
+    document.getElementById('btn-all').classList.add('active');
+    dynamicVideo(data.videos)
+
+  })
 }
 
 
 function CatagoryFilter(id){ // Getting ID from Category.js file
   const urls = `https://openapi.programming-hero.com/api/phero-tube/category/${id}`
+
+  // Graping the Btn by Dynamic ID_category
+  const cat_btn = document.getElementById(`btn-${id}`);
+  removeActive();
+  cat_btn.classList.add('active');
    
   // console.log(urls);
   fetch(urls)
   .then(res=> res.json())
-  .then(data => dynamicVideo(data.category))
+  .then(data => {
+    
+    dynamicVideo(data.category)})
   // here data.category is "Array of Content"
 }
 
@@ -24,7 +36,7 @@ function dynamicVideo(data){
   const videoContainer = document.getElementById('video-container');
         videoContainer.innerHTML = '';
 
-        console.log(data.length)
+        // console.log(data.length)
         if(data.length == 0) {
           videoContainer.innerHTML = `
         <div class="col-span-full flex flex-col items-center text-center gap-y-6 py-40">
