@@ -1,3 +1,22 @@
+
+
+/*
+    All Function is in Here 
+    - removeActive ~ This function removes the 'active' class from all elements with the 'active' class.
+    - loadVideoDetails(video_id) ~ This is the main function for fetching video details based on video_id.
+    - displayVideoDetails(video) ~ This function displays the fetched video details in a modal.
+    - subscribe() ~ This function disables the subscribe button when clicked.
+    - categoryApi() ~ This function loads categories(nav) from the API.
+    - myfunction(categories) ~ This function displays the categories.
+    - showLoader() ~ This function shows the loader.
+    - hideLoader() ~ This function hides the loader.
+    - videoApi(input) ~ This function loads videos from the API based on the input.
+    - CatagoryFilter(id) ~ This function filters videos by category.
+    - dynamicVideo(data) ~ This function displays videos dynamically.
+*/
+
+
+
 // Function to remove 'active' class from all elements with the 'active' class
 function removeActive() {
     const activeBtn = document.getElementsByClassName('active');
