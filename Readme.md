@@ -1,98 +1,87 @@
 <p align="center">
-<img src="Logo.png"  />
-</p>
-<p align="center" style="font-size: 24px;">
-  PH Tube is a web-based video streaming application where users can browse and watch videos sorted by categories such as music, comedy, and tutorials.
+  <img src="Logo.png" alt="PH Tube Logo" />
 </p>
 
-<hr/>
-<p align="center" style="font-size: 34px; font-weight:bold">
- REST API
+<p align="center">
+  <strong>PH Tube</strong> is a web-based video streaming application where users can browse and watch videos sorted by categories such as music, comedy, and tutorials.
 </p>
 
-<p style=" font-weight:bold">
- GET: Categories 
-</p>
+---
 
-Endpoint: [https://openapi.programming-hero.com/api/phero-tube/categories](https://openapi.programming-hero.com/api/phero-tube/categories) <br/>
+## 📡 REST API
 
-<hr/>
-<p style=" font-weight:bold">
- GET: Videos 
-</p>
+### GET: Categories
+**Endpoint:**  
+[https://openapi.programming-hero.com/api/phero-tube/categories](https://openapi.programming-hero.com/api/phero-tube/categories)
 
-Endpoint: [https://openapi.programming-hero.com/api/phero-tube/videos](https://openapi.programming-hero.com/api/phero-tube/videos) <br/>
+---
 
-<hr/>
-<p style=" font-weight:bold">
- GET: Video based on Catagory  [ params ]
-</p>
-Endpoint : https://openapi.programming-hero.com/api/phero-tube/category/categoryId
+### GET: Videos
+**Endpoint:**  
+[https://openapi.programming-hero.com/api/phero-tube/videos](https://openapi.programming-hero.com/api/phero-tube/videos)
 
-Example: [https://openapi.programming-hero.com/api/phero-tube/category/1001](https://openapi.programming-hero.com/api/phero-tube/category/1001) <br/>
+---
 
-<hr/>
+### GET: Video based on Category (params)
+**Endpoint:**  
+`https://openapi.programming-hero.com/api/phero-tube/category/categoryId`  
 
-<p style=" font-weight:bold">
- GET: Video based on Title  [ Query ]
-</p>
-Endpoint : https://openapi.programming-hero.com/api/phero-tube/videos?title=videoTitle
+**Example:**  
+[https://openapi.programming-hero.com/api/phero-tube/category/1001](https://openapi.programming-hero.com/api/phero-tube/category/1001)
 
-Example: [https://openapi.programming-hero.com/api/phero-tube/videos?title=shape](https://openapi.programming-hero.com/api/phero-tube/videos?title=shape) <br/>
+---
 
-<hr/>
-<p style=" font-weight:bold">
- GET: Video Details by video_id  [ Query ]
-</p>
-Endpoint : https://openapi.programming-hero.com/api/phero-tube/video/video_id
+### GET: Video based on Title (query)
+**Endpoint:**  
+`https://openapi.programming-hero.com/api/phero-tube/videos?title=videoTitle`  
 
-Example: [https://openapi.programming-hero.com/api/phero-tube/video/aaac](https://openapi.programming-hero.com/api/phero-tube/video/aaac) <br/>
+**Example:**  
+[https://openapi.programming-hero.com/api/phero-tube/videos?title=shape](https://openapi.programming-hero.com/api/phero-tube/videos?title=shape)
 
-<hr/>
-<p align="center" style="font-size: 34px; font-weight:bold">
- Requirements
-</p>
+---
 
-### Create a responsive Navbar which have following elements
+### GET: Video Details by video_id (query)
+**Endpoint:**  
+`https://openapi.programming-hero.com/api/phero-tube/video/video_id`  
 
-- Logo of PH-Tube at Left
-- A Search Box with Search Button at Center
-- A Sort Button at the Right
-- (Add a border at bottom of the Navbar)
+**Example:**  
+[https://openapi.programming-hero.com/api/phero-tube/video/aaac](https://openapi.programming-hero.com/api/phero-tube/video/aaac)
 
-### Create Dynamic Category Section
+---
 
-- Load all the Catagory Button From API and Show them in a centered position
-- on click on a certain button, Load specific Catagory Data
-- Integrate active button functionality for better UX
+## 📋 Requirements
 
-### Create Dynamic Video Sections
+### 🔹 Responsive Navbar
+- Logo of PH-Tube at Left  
+- A Search Box with Search Button at Center  
+- A Sort Button at the Right  
+- Add a border at the bottom of the Navbar  
 
-- Load all the videos from API
-- use the Card Layout mentioned in Design part
-- Show Verified badge (if Verified)
-- on click Show Video Details with Author info in a modal
-- Show No Video Icon if specific category have no videos
+### 🔹 Dynamic Category Section
+- Load all category buttons from API and show them centered  
+- On click, load specific category data  
+- Active button functionality for better UX  
 
-## Additional Features
+### 🔹 Dynamic Video Sections
+- Load all videos from API  
+- Use the card layout from design  
+- Show verified badge (if verified)  
+- On click, show video details with author info in a modal  
+- Show “No Video” icon if a category has no videos  
 
-### Search Functionality
+### 🔹 Additional Features
+#### Search Functionality
+- Integrate search functionality  
+- On input change, deactivate active button and show only matched videos  
 
-- Integrate search functionality
-- on input change  de-activate active button on category and show matched videos only
+---
 
+## 🎨 Design Ideas
 
+### Basic Layout
+![Basic Layout](design/Frame%201.png)
 
-<hr/>
+---
 
-<p align="center" style="font-size: 34px; font-weight:bold">
- Design Idea's
-</p>
-Basic Layout
-<img src="design/Frame 1.png">
-<hr/>
-Error Layout
-
-<img src="design/Frame 3.png">
-
-<hr/>
+### Error Layout
+![Error Layout](design/Frame%203.png)
